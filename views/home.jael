@@ -1,0 +1,11 @@
+<extend src="layout.jael">
+  <block name="content">
+    <!-- <i if=values.isEmpty>There are no values</i>
+    <ul>
+      <li for-each=values as="el">
+        <span>{{el['k']}}</span><span>{{el['v']}}</span>
+      </li>
+    </ul> -->
+    <div>{{title}}</div>
+  </block>
+</extend>
