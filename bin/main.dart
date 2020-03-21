@@ -22,6 +22,9 @@ main() async {
 
   var http = AngelHttp(app);
 
-  var port = Platform.environment['PORT'] ?? 13000;
+  final port = int.tryParse(Platform.environment['PORT']) ?? 13000;
+
+  print('servered at port : $port');
+
   await http.startServer('localhost', port);
 }
