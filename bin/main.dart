@@ -24,7 +24,7 @@ main() async {
 
   var http = AngelHttp(app);
 
-  final port = int.tryParse(Platform.environment['PORT']) ?? 13000;
+  final port = int.tryParse(env['PORT']) ?? 13000;
 
   print('servered at port : $port');
 
