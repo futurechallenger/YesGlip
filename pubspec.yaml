@@ -9,6 +9,7 @@ dependencies:
   angel_jael: ^2.0.0
   angel_static: ^2.0.0
   angel_configuration: ^2.0.0
+  dotenv: ^2.0.0
 dev_dependencies:
   angel_serialize_generator: ^2.0.0
   build_runner: ^1.0.0
