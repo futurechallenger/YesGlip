@@ -7,8 +7,10 @@ import 'package:angel_static/angel_static.dart';
 import 'dart:io';
 // import 'package:angel_file_service/angel_file_service.dart';
 import 'package:file/local.dart';
+import 'package:dotenv/dotenv.dart';
 
 main() async {
+  load();
   // var app = Angel();
   Angel app = new Angel(reflector: MirrorsReflector());
 
@@ -26,5 +28,5 @@ main() async {
 
   print('servered at port : $port');
 
-  await http.startServer('localhost', port);
+  await http.startServer('0.0.0.0', port);
 }
