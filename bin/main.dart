@@ -4,6 +4,7 @@ import 'package:lmsify/src/controllers/home.dart';
 import 'package:angel_container/mirrors.dart';
 import 'package:angel_jael/angel_jael.dart';
 import 'package:angel_static/angel_static.dart';
+import 'dart:io';
 // import 'package:angel_file_service/angel_file_service.dart';
 import 'package:file/local.dart';
 
@@ -20,5 +21,7 @@ main() async {
   app.fallback(vDir.handleRequest);
 
   var http = AngelHttp(app);
-  await http.startServer('localhost', 3000);
+
+  var port = Platform.environment['PORT'] ?? 13000;
+  await http.startServer('localhost', port);
 }
