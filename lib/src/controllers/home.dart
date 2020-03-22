@@ -29,6 +29,10 @@ class HomeController extends Controller {
 
       // res.redirect('/');
       res.headers['X-Frame-Options'] = 'ALLOW-FROM https://instructure.com';
+      if(res.headers.containsKey('X-Frame-Options')){
+        res.headers.remove('X-Frame-Options');
+        // res.headers['Content-Security-Policy'] = 'frame-ancestors https://*.instructure.com';
+      }
       await res.render('index', {'title': 'First render'});
     } catch (e) {
       print('ERROR: ${e}');
