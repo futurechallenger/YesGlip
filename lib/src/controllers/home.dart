@@ -14,7 +14,7 @@ class HomeController extends Controller {
     await res.render('home', {'title': 'Home Page'});
   }
 
-  @Expose('/tool/verify', method: 'POST')
+  @Expose('/tool/verify')
   verifyExternal(RequestContext req, ResponseContext res) async {
     try {
       print('request: headers: ${req.headers}');
