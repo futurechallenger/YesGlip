@@ -19,13 +19,13 @@ class HomeController extends Controller {
     try {
       print('request: headers: ${req.headers}');
 
-      await req.parseBody();
-      print('===>request body \n');
-      final body = req.bodyAsList;
-      if(body != null)
-        req.bodyAsList.forEach((element) {
-          print('=> $element');
-        });
+      // await req.parseBody();
+      // print('===>request body \n');
+      // final body = req.bodyAsList;
+      // if(body != null)
+      //   req.bodyAsList.forEach((element) {
+      //     print('=> $element');
+      //   });
 
       // res.redirect('/');
       await res.render('index', {'title': 'First render'});
