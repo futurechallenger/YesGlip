@@ -1,9 +1,9 @@
 <extend src="layout.jael">
   <block name="content">
-    <i if=values == null>There are no values</i>
-    <ul if=values != null>
-      <li for-each=values as="el">
-        <span>{{el['k']}}</span><span>{{el['v']}}</span>
+    <i if=params == null>There are no values</i>
+    <ul if=params!= null>
+      <li for-each=params.keys as="k">
+        <span>{{k}} - {{params[k]}}</span>
       </li>
     </ul>
     <div>{{title}}</div>
