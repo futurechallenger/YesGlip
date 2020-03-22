@@ -15,10 +15,10 @@
     </a>
     <div class="right menu">
       <div class="ui item">
-        <a href="/upload" class="ui button">
+        <!-- <a href="/upload" class="ui button">
           <i class="upload icon"></i>
           Upload
-        </a>
+        </a> -->
       </div>
     </div>
   </div>
