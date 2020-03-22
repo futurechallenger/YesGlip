@@ -14,11 +14,16 @@ class HomeController extends Controller {
     await res.render('home', {'title': 'Home Page'});
   }
 
-  @Expose('/tool/verify')
+  @Expose('/tool/verify', method: 'POST')
   verifyExternal(RequestContext req, ResponseContext res) async {
     try {
-      print('request: headers: ${req.headers}');
-      print('request: ${req.body}');
+      // print('request: headers: ${req.headers}');
+
+      await req.parseBody();
+      print('===>request body \n');
+      req.bodyAsList.forEach((element) {
+        print('=> $element');
+      });
 
       // res.redirect('/');
       await res.render('index', {'title': 'First render'});
