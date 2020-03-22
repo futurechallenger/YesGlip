@@ -19,6 +19,11 @@ main() async {
   await app.configure(jael(fs.directory('views')));
   await app.configure(new HomeController().configureServer);
 
+  app.all('*', (req, res) {
+    res.headers['X-Frame-Options'] = 'ALLOW-FROM https://*.instructure.com';
+    return true;
+  });
+
   var vDir = VirtualDirectory(app, fs, source: fs.directory('static'));
   app.fallback(vDir.handleRequest);
 

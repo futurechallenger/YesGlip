@@ -2,7 +2,7 @@
   <block name="content">
     <i if=values == null>There are no values</i>
     <ul if=values != null>
-      <li for-each=values as="el">
+      <li for-each=params as="el">
         <span>{{el['k']}}</span><span>{{el['v']}}</span>
       </li>
     </ul>
