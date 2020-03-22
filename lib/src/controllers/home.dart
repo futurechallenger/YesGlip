@@ -20,7 +20,8 @@ class HomeController extends Controller {
       print('request: headers: ${req.headers}');
       print('request: ${req.body}');
 
-      res.redirect('/');
+      // res.redirect('/');
+      await res.render('index', {'title': 'First render'});
     } catch (e) {
       print('ERROR: ${e}');
       res.redirect('error.html');
