@@ -17,19 +17,21 @@ class HomeController extends Controller {
   @Expose('/tool/verify', method: 'POST')
   verifyExternal(RequestContext req, ResponseContext res) async {
     try {
-      // print('request: headers: ${req.headers}');
+      print('request: headers: ${req.headers}');
 
       await req.parseBody();
       print('===>request body \n');
-      req.bodyAsList.forEach((element) {
-        print('=> $element');
-      });
+      final body = req.bodyAsList;
+      if(body != null)
+        req.bodyAsList.forEach((element) {
+          print('=> $element');
+        });
 
       // res.redirect('/');
       await res.render('index', {'title': 'First render'});
     } catch (e) {
       print('ERROR: ${e}');
-      res.redirect('error.html');
+      res.redirect('/error.html');
     }
   }
 
